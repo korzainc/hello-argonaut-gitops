@@ -1,6 +1,6 @@
 # STAGING — updated only by an APPROVED promotion PR (a validated dev tag/digest).
 image:
-  tag: "94a9400"
+  tag: "1f60dd7"
 service:
   type: LoadBalancer
 greeting: "Hello from Argonaut [STAGING]"
