@@ -1,6 +1,6 @@
 # DEV — updated by app CI on every merge to main (auto-merged PR). Last-write-wins.
 image:
-  tag: "1f60dd7"
+  tag: "branch-direct"
 service:
   type: LoadBalancer
 greeting: "Hello from Argonaut [DEV]"
