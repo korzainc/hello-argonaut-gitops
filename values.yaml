@@ -1,0 +1,10 @@
+# Base defaults; each env overrides in envs/<env>.yaml
+image:
+  repo: korzagwpocf918f1.azurecr.io/hello-argonaut
+  tag: "94a9400"
+replicas: 1
+service:
+  type: LoadBalancer
+  port: 80
+imagePullSecret: acr-cred
+greeting: "Hello from Argonaut!"

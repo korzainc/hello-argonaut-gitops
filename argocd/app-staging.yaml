@@ -1,0 +1,21 @@
+# STAGING app: auto-sync + selfHeal; only changes when a promotion PR merges.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-argonaut-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/korzainc/hello-argonaut-gitops.git
+    path: .
+    targetRevision: main
+    helm:
+      valueFiles:
+        - envs/staging.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hello-argonaut-staging
+  syncPolicy:
+    automated: { prune: true, selfHeal: true }
+    syncOptions: [CreateNamespace=true]
